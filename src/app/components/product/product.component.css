@@ -1,0 +1,7 @@
+.productComponent{
+  padding: 4px 6px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2px;
+border: 1px solid black;
+}
