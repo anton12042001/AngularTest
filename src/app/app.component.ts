@@ -4,22 +4,17 @@ import {ProductsService} from "./services/products.service";
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  template:`<div><router-outlet></router-outlet></div>`,
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'angular app';
-  products: IProduct[] = []
-  loading  = false
 
-  constructor(private productsService: ProductsService) {
+
+  constructor() {
   }
 
   ngOnInit(): void {
-    this.loading = true
-    this.productsService.getAll().subscribe(products => {
-      this.products = products
-      this.loading = false
-    })
   }
+
+
 }
