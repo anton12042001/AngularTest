@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {IProduct} from "./models/product";
-import {products as data} from "./components/data/products";
 import {ProductsService} from "./services/products.service";
 
 @Component({
@@ -11,15 +10,16 @@ import {ProductsService} from "./services/products.service";
 export class AppComponent implements OnInit {
   title = 'angular app';
   products: IProduct[] = []
+  loading  = false
 
   constructor(private productsService: ProductsService) {
   }
 
   ngOnInit(): void {
+    this.loading = true
     this.productsService.getAll().subscribe(products => {
       this.products = products
-      console.log(products)
+      this.loading = false
     })
   }
-
 }
