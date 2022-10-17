@@ -9,16 +9,8 @@ import {IProduct} from "../../models/product";
 })
 export class HomeComponent implements OnInit {
   title = 'angular app';
-  products: IProduct[] = []
-  loading  = false
-  constructor(private productsService: ProductsService) {
+  constructor() {
   }
-
   ngOnInit(): void {
-    this.loading = true
-    this.productsService.getAll().subscribe(products => {
-      this.products = products
-      this.loading = false
-    })
   }
 }
