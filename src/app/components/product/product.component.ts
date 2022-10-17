@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from "@angular/core"
-import {IProduct} from "../../models/product";
-import {ProductsService} from "../../services/products.service";
+import {IProfile} from "../../models/profile";
+import {BackHttpService} from "../API/BackHttpService";
+import {StorageService} from "../API/StorageService";
 
 
 @Component({
@@ -9,16 +10,20 @@ import {ProductsService} from "../../services/products.service";
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit{
-  @Input() product: IProduct
-  products: IProduct[] = []
+  @Input() product: IProfile
+  products: IProfile[] = []
   loading  = false
-  constructor(private productsService: ProductsService) {
+  constructor(private productsService: BackHttpService,
+              private storageService: StorageService) {
   }
   ngOnInit(): void {
     this.productsService.getAll().subscribe(products => {
       this.products = products
       this.loading = false
     })
+  }
+  onClickByButton(product:IProfile){
+    this.storageService.setData(product);
   }
 }
 

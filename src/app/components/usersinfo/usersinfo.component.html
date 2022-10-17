@@ -1,1 +1,6 @@
-<div>Информация о конкретном юзере</div>
+<div class="userInfoContainer" *ngFor="let singleProduct of profile" >
+  <div>Информация о конкретном юзере с id {{singleProduct.id}}</div>
+  <div class="userInfoName" >{{singleProduct.first_name}} {{singleProduct.last_name}} </div>
+  <img class="userInfoImg" [src]="singleProduct.avatar" alt="">
+  <div class="userInfoEmail" >{{singleProduct.email}}</div>
+</div>

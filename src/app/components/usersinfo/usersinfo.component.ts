@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ISingleProduct} from "../../models/singleProducts";
+import {StorageService} from "../API/StorageService";
+import {BackHttpService} from "../API/BackHttpService";
+import {IProfile} from "../../models/profile";
 
 @Component({
   selector: 'app-usersinfo',
@@ -6,10 +10,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./usersinfo.component.css']
 })
 export class UsersinfoComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+  profile: IProfile;
+  constructor(private backHttpService: BackHttpService,
+              private storageService: StorageService) {
   }
-
+  ngOnInit(): void {
+    let id=this.storageService.getData().id;
+    this.backHttpService.getUserById(id).subscribe(user => {
+      console.log(user)
+      this.profile = user
+    })
+  }
 }

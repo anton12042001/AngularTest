@@ -1,4 +1,4 @@
-export interface IProduct {
+export interface ISingleProduct {
     id: number,
     email: string,
     first_name: string,
