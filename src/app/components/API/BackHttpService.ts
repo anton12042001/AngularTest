@@ -13,7 +13,7 @@ export class BackHttpService {
   getAll(): Observable<IProfile[]> {
     return this.http.get<any>('https://reqres.in/api/users').pipe(map((res) => res.data))
   }
-  getUserById(id: number): Observable<IProfile[]> {
+  getUserById(id: number): Observable<IProfile> {
     return this.http.get<any>(`https://reqres.in/api/users/${id}`).pipe(map((res) => res.data));
   }
 }

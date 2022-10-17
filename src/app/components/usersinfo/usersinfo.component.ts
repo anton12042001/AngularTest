@@ -17,7 +17,6 @@ export class UsersinfoComponent implements OnInit {
   ngOnInit(): void {
     let id=this.storageService.getData().id;
     this.backHttpService.getUserById(id).subscribe(user => {
-      console.log(user)
       this.profile = user
     })
   }
