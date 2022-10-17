@@ -1,7 +1,4 @@
-import {Injectable, Input} from "@angular/core";
-import {HttpClient} from "@angular/common/http";
-import {map, Observable, Subject} from "rxjs";
-import {ISingleProduct} from "../../models/singleProducts";
+import {Injectable} from "@angular/core";
 import {IProfile} from "../../models/profile";
 
 @Injectable({

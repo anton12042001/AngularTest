@@ -1,6 +1,14 @@
 <div class="userInfoContainer" >
-  <div>Информация о конкретном юзере с id {{profile.id}}</div>
+  <div>Информация о конкретном юзере с id {{(profile.id !== 0) && profile.id}}</div>
   <div class="userInfoName" >{{profile.first_name}} {{profile.last_name}} </div>
   <img class="userInfoImg" [src]="profile.avatar" alt="">
   <div class="userInfoEmail" >{{profile.email}}</div>
+
+  <div>
+    <input (change)="onChange($event)" type="text">
+  </div>
+
+  <button
+  (click)="onClick(profile)"
+  >Изменить данные</button>
 </div>
