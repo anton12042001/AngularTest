@@ -1,0 +1,10 @@
+.productComponent{
+  border: 1px dashed thistle;
+  width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}

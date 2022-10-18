@@ -1,0 +1,15 @@
+<div class="colorTitle" >Angular app resource</div>
+<div class="colorButton" >
+  <button
+    routerLink=""
+  >Вернуться к пользователям</button>
+</div>
+<div class="containerColorBlock"
+  *ngFor="let color of colors">
+  <div class="containerColor"  style="background: {{color.color}}" >
+    <div>id: {{color.id}}</div>
+    <div>Name: {{color.name}}</div>
+    <div>Year: {{color.year}}</div>
+    <div>Pantone value: {{color.pantone_value}}</div>
+  </div>
+</div>

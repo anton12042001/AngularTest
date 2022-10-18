@@ -1,14 +1,18 @@
-<div class="userInfoContainer" >
-  <div>Информация о конкретном юзере с id {{(profile.id !== 0) && profile.id}}</div>
-  <div class="userInfoName" >{{profile.first_name}} {{profile.last_name}} </div>
-  <img class="userInfoImg" [src]="profile.avatar" alt="">
-  <div class="userInfoEmail" >{{profile.email}}</div>
+<ng-container
+*ngIf="profile"
+>
+  <div class="userInfoContainer" >
+    <div>Информация о конкретном юзере с id {{(profile.id !== 0) && profile.id}}</div>
+    <div class="userInfoName" >{{profile.first_name}} {{profile.last_name}} </div>
+    <img class="userInfoImg" [src]="profile.avatar" alt="">
+    <div class="userInfoEmail" >{{profile.email}}</div>
+    <div>
+      <input (change)="onChange($event)" type="text">
+    </div>
 
-  <div>
-    <input (change)="onChange($event)" type="text">
+    <button
+      (click)="onClick(profile)"
+    >Изменить имя пользователя</button>
   </div>
 
-  <button
-  (click)="onClick(profile)"
-  >Изменить данные</button>
-</div>
+</ng-container>

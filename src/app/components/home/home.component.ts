@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  title = 'angular app';
+  title = 'angular app users';
   constructor() {
   }
   ngOnInit(): void {

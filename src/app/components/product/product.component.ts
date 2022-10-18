@@ -30,16 +30,14 @@ export class ProductComponent implements OnInit {
   }
 
   onClickDelete(id: number) {
-    console.log(id)
     let newProducts: IProfile[] = []
       this.backHttpService.deleteUserById(id).subscribe(() => {
-        for (let i = 0; i <= this.products.length; i++) {
+        for (let i = 0; i < this.products.length; i++) {
           if (this.products[i].id !== id) {
             newProducts.push(this.products[i])
           }
         }
         this.products = newProducts
-        console.log(this.products)
       })
   }
 }

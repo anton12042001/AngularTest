@@ -1,17 +1,20 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from "../components/home/home.component";
 import {UsersinfoComponent} from "../components/usersinfo/usersinfo.component";
 import {NotFoundComponent} from "../components/not-found/not-found.component";
 import {ProductComponent} from "../components/product/product.component";
+import {ColorComponent} from "../components/color/color.component";
 
 const appRoutes: Routes = [
+  {path: 'color', component: ColorComponent},
   {path: '', component: HomeComponent, children: [
       {path: '', component: ProductComponent},
-      {path: ':id', component: UsersinfoComponent}
+      {path: ':id', component: UsersinfoComponent},
     ]
   },
-  {path: '**', component: NotFoundComponent}
+  {path: '**', component: NotFoundComponent},
+
 ]
 
 
