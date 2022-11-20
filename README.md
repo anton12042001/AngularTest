@@ -1,6 +1,12 @@
-# MyApp
+# show user
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.6.
+
+### Working with displaying users on the angular framework
+
+
+![image](https://user-images.githubusercontent.com/98453976/202885443-c6d211f3-00b4-460f-8d96-7f65167dcff2.png)
+
 
 ## Development server
 
@@ -25,3 +31,6 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+# Must read
+This project is purely educational in order to see and touch Angular
